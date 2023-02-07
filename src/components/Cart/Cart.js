@@ -10,18 +10,20 @@ const Cart = (props) => {
     const cartItems = (
         <ul className={classes['cart-name']}>
             {cartcntx.items.map((item) => (
-                
-                <li key={Math.random()}>
-                    Name: {item.name}
-                    Price: {item.price}
-                    Quantity: {item.quantity}
+                <li key={Math.random()} className={classes.list}>
+                    <div className={classes.name}>
+                        Name: {item.name}
+                        </div>
+                       <div className={classes.price}>Price: {item.totalPrice}</div> 
+                    
+                    <div className={classes.quantity}>Quantity: {item.quantity}</div>
                 </li>))}
         </ul>
     );
 
     let totalPrice = 0;
     cartcntx.items.forEach(item => {
-        totalPrice = totalPrice + Number(item.price)
+        totalPrice = totalPrice + Number(item.totalPrice)
     })
 
     return (

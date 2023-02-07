@@ -44,3 +44,18 @@
     background-color: #8a2b06;
     color: white;
   }
+
+  .list{
+   display: flex;
+   margin: 2px;
+   font-weight: bold;
+   justify-content: space-between;
+   text-align:center;
+   margin-bottom: 1rem;
+  }
+
+  ul{
+    border-bottom : solid 2px;
+  }
+
+
