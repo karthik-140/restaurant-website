@@ -15,17 +15,39 @@ const CartProvider = (props) =>{
            itemsCopy[itemIndex].totalPrice = itemsCopy[itemIndex].quantity * itemsCopy[itemIndex].price;
            updateItems(itemsCopy);
         }
-            
     }
     const removeItemFromCartHandler = (id) =>{
+        
+    }
+    
+    let totalPrice = 0;
+    items.forEach(item => {
+        totalPrice = totalPrice + Number(item.price*item.quantity)
+    })
+
+    const incrementHandler = () =>{
 
     }
-
+    const decrementHandler = () =>{
+            const itemsCopy = [...items]
+            const idx = itemsCopy.findIndex((i) => i.id === item.id)
+           
+            if (idx !== -1 && itemsCopy[idx].qty === 1) {
+              itemsCopy.splice(idx, 1)
+              setItems(itemsCopy)
+            } else {
+              itemsCopy[idx].qty--;
+              setItems(itemsCopy)
+            }
+          }
+    
     const cartContext = {
         items: items,
-        totalAmount: 0,
+        totalAmount: totalPrice,
         addItem: addItemToCartHandler,
-        removeItem: removeItemFromCartHandler
+        removeItem: removeItemFromCartHandler,
+        quantityplus: incrementQuantity,
+        quantityminus: decrementHandler 
     }
 
     return (

@@ -8,7 +8,6 @@ import CartList from './CartList';
 const Cart = (props) => {
     const cartcntx = useContext(CartContext);
 
-    console.log(cartcntx.items)
     const cartItems = (
         <ul className={classes['cart-name']}>
             {cartcntx.items.map((item) => (
@@ -21,17 +20,21 @@ const Cart = (props) => {
         </ul>
     );
 
-    let totalPrice = 0;
-    cartcntx.items.forEach(item => {
-        totalPrice = totalPrice + Number(item.totalPrice)
-    })
+
+    // let totalPrice = 0;
+    // cartcntx.items.forEach(item => {
+    //     totalPrice = totalPrice + Number(item.totalPrice)
+    // })
+    // const totalItemsPrice = cartcntx.items.reduce(
+    //     (acc,curr) => acc + curr.price*curr.quantity,0
+    // )
 
     return (
         <Modal onClose={props.onCloseCart}>
             {cartItems}
             <div className={classes.total}>
                 <span>Total Amount</span>
-                <span>{totalPrice}</span>
+                <span>{cartcntx.totalAmount}</span>
             </div>
             <div className={classes.actions}>
                 <button className={classes['button--alt']} onClick={props.onCloseCart}>Close</button>
