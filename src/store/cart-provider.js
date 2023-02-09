@@ -11,7 +11,7 @@ const CartProvider = (props) => {
     if (itemIndex === -1) {
       updateItems([...items, item]);
     } else {
-      itemsCopy[itemIndex].quantity++;
+      itemsCopy[itemIndex].quantity = parseInt(itemsCopy[itemIndex].quantity) + parseInt(item.quantity);
       itemsCopy[itemIndex].totalPrice =
         itemsCopy[itemIndex].quantity * itemsCopy[itemIndex].price;
       updateItems(itemsCopy);
@@ -36,7 +36,7 @@ const CartProvider = (props) => {
     const itemsCopy = [...items];
     const idx = itemsCopy.findIndex((i) => i.id === item.id);
 
-    if (idx !== -1 && itemsCopy[idx].quantity === 1) {
+    if (idx !== -1 && itemsCopy[idx].quantity < 2 ) {
       itemsCopy.splice(idx, 1);
       updateItems(itemsCopy);
     } else {
