@@ -45,17 +45,40 @@
     color: white;
   }
 
-  .list{
-   display: flex;
-   margin: 2px;
-   font-weight: bold;
-   justify-content: space-between;
-   text-align:center;
-   margin-bottom: 1rem;
+  .cart-list{
+    display: block;
+    border-bottom: 2px solid #8a2b06;
+    font-weight: bold;
+    padding: 5px;
   }
 
-  ul{
-    border-bottom : solid 2px;
+ .quantity{
+  text-align: right;
+ }
+  
+  .price{
+    color:#8a2b06;
+    margin-top: 5px;
   }
 
+.cart-list button {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #8a2b06;
+  border: 1px solid #8a2b06;
+  width: 2rem;
+  text-align: center;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin: 0 5px 0 5px;
+}
+
+.cart-list button:hover,
+.cart-list button:active {
+  background-color: #8a2b06;
+  color: white;
+}
 

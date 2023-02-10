@@ -47,7 +47,7 @@ const CartProvider = (props) => {
 
   const cartContext = {
     items: items,
-    totalAmount: totalPrice,
+    totalAmount: totalPrice.toFixed(2),
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
     quantityplus: incrementHandler,

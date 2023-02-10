@@ -13,12 +13,12 @@ const CartList = (props) => {
   // }
 
   return (
-    <li key={props.id} className={classes.list}>
-      <div>Name: {props.name}</div>
-      <div>Price: $ {props.price}</div>
-      <div>
+    <li key={props.id} className={classes['cart-list']}>
+      <div>{props.name}</div>
+      <div className={classes.price}> $ {props.price}</div>
+      <div className={classes.quantity}>
         <button onClick={() => cxt.quantityminus(props)}>-</button>
-        Quantity: {props.quantity}
+        {props.quantity}
         <button onClick={() => cxt.quantityplus(props)}>+</button>
       </div>
       <div></div>
